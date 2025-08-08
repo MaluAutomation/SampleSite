@@ -1,0 +1,95 @@
+/* Reset and full coverage */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(236, 44%, 23%); /* Soft blue background */
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #054d9f;
+}
+
+/* Login container */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form panel styling */
+form, #title, label, input, select, button {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #051a59;
+}
+
+/* Label text */
+label {
+  margin-top: 10px;
+  font-weight: bold;
+  display: block;
+  color: #010509;
+}
+
+/* Inputs and dropdown */
+input[type="text"],
+input[type="password"],
+select {
+  padding: 12px;
+  border: 1px solid #99ccee;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #3399ff;
+  outline: none;
+}
+
+/* Submit button */
+button {
+  padding: 12px;
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #007acc;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Language dropdown */
+select {
+  background-color: #e6f2ff;
+  font-weight: bold;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #99ccee;
+  margin: 25px 0;
+}
+
+
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to BiteBridge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      background-color: #f4f4f4;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    label, input, button, select {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .submit-btn {
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 id="title">Welcome to BiteBridge</h2>
+
+  <form onsubmit="redirectWithLanguage(event)">
+    <label for="username" id="label-username">Username</label>
+    <input type="text" id="username" name="username" required />
+
+    <label for="password" id="label-password">Password</label>
+    <input type="password" id="password" name="password" required />
+
+    <label for="language-select" id="label-language">🌐 Language</label>
+    <select id="language-select" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+    </select>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Welcome to BiteBridge",
+        username: "Username",
+        password: "Password",
+        submit: "Submit",
+        language: "🌐 Language"
+      },
+      hi: {
+        title: "बाइटब्रिज में आपका स्वागत है",
+        username: "यूज़रनेम",
+        password: "पासवर्ड",
+        submit: "सबमिट करें",
+        language: "🌐 भाषा"
+      },
+      fr: {
+        title: "Bienvenue chez BiteBridge",
+        username: "Nom d'utilisateur",
+        password: "Mot de passe",
+        submit: "Soumettre",
+        language: "🌐 Langue"
+      },
+      es: {
+        title: "Bienvenido a BiteBridge",
+        username: "Nombre de usuario",
+        password: "Contraseña",
+        submit: "Enviar",
+        language: "🌐 Idioma"
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById("language-select").value;
+      const t = translations[lang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("label-username").textContent = t.username;
+      document.getElementById("label-password").textContent = t.password;
+      document.querySelector(".submit-btn").textContent = t.submit;
+      document.getElementById("label-language").textContent = t.language;
+    }
+
+    function redirectWithLanguage(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const lang = document.getElementById("language-select").value;
+
+      if (username && password) {
+        window.location.href = `homepage.html?lang=${lang}`;
+      }
+    }
+  </script>
+</body>
+</html>

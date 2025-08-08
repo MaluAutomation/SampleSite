@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pizza</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 80px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #210456;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            background-color: #888;
+            margin-top: 10px;
+        }
+
+        .logout-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .logout-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-card">
+        <h1 id="product-name">🍕 Pizza</h1>
+        <p>Select quantity:</p>
+        <input type="number" id="quantity" min="1" value="1">
+        <br>
+        <button onclick="addToCart()">Add to Cart</button>
+        <br>
+        <button class="back-button" onclick="goBack()">← Back to Homepage</button>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <script src="add-product.js"></script>
+</body>
+
+</html>
