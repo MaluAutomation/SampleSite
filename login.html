@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to BiteBridge</title>
+  <link rel="stylesheet" href="style.css"> <!-- ✅ Your external stylesheet -->
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -96,6 +96,7 @@
 
     function changeLanguage() {
       const lang = document.getElementById("language-select").value;
+      localStorage.setItem("lang", lang);
       const t = translations[lang];
       document.getElementById("title").textContent = t.title;
       document.getElementById("label-username").textContent = t.username;
@@ -111,9 +112,17 @@
       const lang = document.getElementById("language-select").value;
 
       if (username && password) {
-        window.location.href = `homepage.html?lang=${lang}`;
+        localStorage.setItem("lang", lang);
+        localStorage.setItem("user", username); // optional
+        window.location.href = "homepage.html";
       }
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("lang") || "en";
+      document.getElementById("language-select").value = savedLang;
+      changeLanguage();
+    });
   </script>
 </body>
 </html>

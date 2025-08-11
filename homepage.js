@@ -48,9 +48,9 @@ function localizeContent() {
   document.getElementById("footer-text").textContent = t.footer;
 }
 function logout() {
- 
-  localStorage.removeItem('user'); 
-  window.location.href = 'login.html'; 
+  localStorage.removeItem("user");
+  localStorage.setItem("lang", "en"); // Reset to English
+  window.location.href = "login.html";
 }
 
 window.onload = localizeContent;
